@@ -164,6 +164,7 @@ var gojs = go.GraphObject.make;
     const resultado = esPalindromoPar(palabra);
     const divResultado = document.getElementById("resultado");
     divResultado.innerHTML = resultado;
+    localStorage.setItem(palabra, resultado)
   }
   
   function rangeSlide(value){
