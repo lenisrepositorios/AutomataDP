@@ -109,5 +109,6 @@ var gojs = go.GraphObject.make;
     return palabra === palabra.split("").reverse().join("");
   }
   
+  
   console.log(validarPalindromoPar("aabbaa")); // true
   
