@@ -5,7 +5,7 @@ var gojs = go.GraphObject.make;
     [
       { key: "p" },
       { key: "q" },
-      { key: "r" }
+      { key: "r" },
     ],
     [
       { from: "p", to: "p" , text: "b, b/bb\na, b/ba\nb, a/ab\na, a/aa\nb, #/#b\na, #/#a" },
@@ -20,11 +20,9 @@ var gojs = go.GraphObject.make;
     gojs(go.Shape, "Circle", { fill: "#33FFDD" }),
     gojs(go.TextBlock, { margin: 8 }, new go.Binding("text", "key")),
 
-    // Dibujar el nodo de aceptacion
-
     gojs(go.Shape, "Circle", { width: 32, height: 32, fill: "transparent", strokeWidth: 1 },
       new go.Binding("visible", "", function(data) {
-        return data.key === "r";  // mostrar solo en el nodo r
+        return data.key === "r";
       }))
   );
 
@@ -51,41 +49,45 @@ var gojs = go.GraphObject.make;
     
     for (let i = 0; i < palabra.length; i++) {
       const simboloActual = palabra[i];
-      console.log(simboloActual)
+      console.log(simboloActual, palabra.length)
       // Buscamos una transición para el símbolo actual desde el estado actual
       const transicion = myDiagram.model.linkDataArray.find(
         (t) => t.from === estadoActual && t.text.includes(`${simboloActual},`)
       );
   
       if (!transicion) {
+        console.log("existe?")
         // No se encontró una transición válida para el símbolo actual
         return false;
       }
-  
+      console.log("sigue?")
       // Realizamos la transición sacando y agregando símbolos a la pila
       const [, sacar, agregar] = transicion.text.split("/");
       if (sacar !== "#") {
         const simboloEnPila = pila.pop();
+        console.log("Valor actual de ", simboloEnPila, "y sacar: ",sacar)
         if (simboloEnPila !== sacar) {
+          console.log("sigue?2: ", simboloEnPila)
           // El símbolo a sacar de la pila no coincide con el que está en la cima
           return false;
         }
+        console.log("sigue?3")
       }
       if (agregar !== "#") {
         const nuevosSimbolos = agregar.split("").reverse();
         pila.push(...nuevosSimbolos);
       }
-  
+      console.log("sigue?4")
       // Actualizamos el estado actual
       estadoActual = transicion.to;
     }
-  
+  console.log("tam de pila", pila.length)
     // Llegamos al final de la palabra, ahora debemos vaciar la pila
     while (pila.length > 1) {
       const transicion = myDiagram.model.linkDataArray.find(
-        (t) => t.from === estadoActual && t.text.includes(`${simboloActual},`)
+        (t) => t.from === estadoActual && t.text.includes(`#,`)
       );
-
+      console.log("transicion", transicion)
       if (!transicion) {
         // No se encontró una transición válida para el símbolo #
         return false;
@@ -104,7 +106,7 @@ var gojs = go.GraphObject.make;
       }
       estadoActual = transicion.to;
     }
-  
+    console.log("")
     // Verificamos si la palabra es palíndroma
     return palabra === palabra.split("").reverse().join("");
   }
