@@ -1,0 +1,75 @@
+/*.home{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#menu{
+    height: 100%;
+    width: 15%; 
+    background-color: aqua; 
+    display: inline-block; 
+    position: absolute;
+    min-width: 15%;
+}
+
+#myDiagramDiv{
+    width:80%; 
+    height:85%; 
+    background-color: #f9fcfc; 
+    left: 208px; 
+    top: 200px; 
+    display: inline-block;
+    position: fixed;
+}
+
+    @media (max-width: 767px) {
+        #menu {
+            padding: 10px;
+        }
+        
+        #myDiagramDiv {
+            height: 300px;
+        }
+    }
+*/
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    #menu{
+        height: 100%;
+        width: 15%; 
+        background-color: aqua; 
+        display: inline-block; 
+        position: absolute;
+        min-width: 15%;
+    }
+    
+    #myDiagramDiv{
+        width:80%; 
+        height:85%; 
+        background-color: #f9fcfc; 
+        left: 208px; 
+        top: 200px; 
+        display: inline-block;
+        position: fixed;
+    }
+    
+    @media screen and (max-width: 767px) {
+      /* Estilos para dispositivos móviles */
+      #menu{
+        position: relative;
+        width: 100%;
+        min-width: unset;
+        height: auto;
+      }
+      
+      #myDiagramDiv{
+        width: 100%;
+        height: 400px;
+        left: 0;
+        top: 50px;
+        position: relative;
+      }
+    }
