@@ -10,11 +10,12 @@
 <body>
     <div class="home">
         <div id="menu">
-            <h1 style= "padding-left: 70px;" >
+            <h1 id="Menu" style= "padding-left: 70px;" >
                 Menu
             </h1>
         
             <br><br><br><br><br>
+
             <h2 id="h2I" onmouseenter="sintetizarMensaje('Menu de idiomas', 'h2I')">
                 Idioma
             </h2>
@@ -32,11 +33,12 @@
             <div class="main-content">                
                 <h2 id="barraDelLenguaje" class="plb" data-section="app">Ingresa aquí:</h2>
                 <input id="palabra" type="text" class="plb" onmouseenter="sintetizarMensaje('Ingrese palabra a validar', 'palabra')">
+                <button class="plb" onclick="validar()" id="validador">Validar</button>
+                <div id="resultado" onmouseover="sintetizarMensaje(document.getElementById('resultado').innerText,'resultado')"></div>
+
                 </div>       
-               <div class="vspeed">
-                    <h2>
-                        Velocidad
-                    </h2>
+               <div class="vspeed" style="margin-left: 600px; margin-top: 10px;">
+                    <h2 id="Mvelocidad">Velocidad</h2>
                     <span id="rangeValue">
                         0
                     </span>

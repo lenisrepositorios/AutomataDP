@@ -74,24 +74,11 @@
         position: relative;
       }
     }
-
-    /*#menuIdioma {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        z-index: 1;
-        list-style: none;
-        background-color: #3e4a4a;
-        border: 1px solid #5f5c5c;
-        padding: 0;
-        margin: 0;
-      }*/
       
       #menuIdioma li {
         display: block;
         padding: 2%px 5%;
-        border-bottom: 1px solid #969696;
+        border-bottom: 1px solid #775252;
       }
       
       #menuIdioma li:last-child {
@@ -123,6 +110,18 @@
         padding-left: 300px;
         
       }
+
+      #resultado{
+        font-family: 'Poppins', sans-serif;
+        position: absolute;
+        top: 200px;
+        left: 302px;
+        width: 353px;
+    
+        font-size: 20px;
+        text-shadow: 0.05em 0 0 rgba(100, 99, 99, 0.75),
+                     
+    }
 
  
 

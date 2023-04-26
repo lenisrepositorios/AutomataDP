@@ -1,10 +1,10 @@
 var idiomas = {
     es: {
       app: {
-        menu:"menu",
+        Menu:"Menu",
         h2I:"Idioma",
         historialboton:"Historial",
-        titulo: "Automata",
+        titulo: "Automata de Pila | Validador de Palindromos",
         barraDelLenguaje: "Ingresa aquí:",
         validador: "Validar",
         Mvelocidad: "Velocidad"
@@ -13,10 +13,10 @@ var idiomas = {
     },
     en: {
       app: {
-        menu:"Menu",
+        Menu:"Menu",
         h2I:"Languaje",
         historialboton:"history",
-        titulo: "automaton",
+        titulo: "Stack Automata | Palindrome Validator",
         barraDelLenguaje: "Enter here:",
         validador: "Validate",
         Mvelocidad: "Speed",
@@ -26,10 +26,10 @@ var idiomas = {
     },
     pt: {
       app: {
-        menu:"Menu",
+        Menu:"Menu",
         h2I:"língua",
         historialboton:"história",
-        titulo: "autómatos",
+        titulo: "Autómatos de pilha | Validador de palíndromos",
         barraDelLenguaje: "Entrar aqui:",
         validador: "Validar",
         Mvelocidad: "Velocidade"
@@ -41,7 +41,7 @@ var idiomas = {
   function cambiarIdioma(idioma) {
     var datosDeIdioma = idiomas[idioma].app;
   
-    document.querySelector("#menu").textContent = datosDeIdioma.menu;
+    document.querySelector("#Menu").textContent = datosDeIdioma.Menu;
     //document.querySelector("#h2I").textContent = datosDeIdioma.h2I;
     document.querySelector("#titulo").textContent = datosDeIdioma.titulo;
     document.querySelector("#barraDelLenguaje").textContent = datosDeIdioma.barraDelLenguaje;

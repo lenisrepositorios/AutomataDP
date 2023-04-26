@@ -132,6 +132,20 @@ var gojs = go.GraphObject.make;
     return palabra === palabra.split("").reverse().join("");
   }
   
+  function esPalindromoPar(palabra) {
+    if (palabra === '') {
+      return "Palabra no ingresada";
+    }
+    if (palabra.length % 2 !== 0) {
+      return "Palabra rechazada";
+    }
+    if (palabra === palabra.split('').reverse().join('')) {
+      return "Palabra aceptada";
+    } else {
+      return "Palabra rechazada";
+    }
+  }
+  
   
   console.log(validarPalindromoPar("aabbaa")); // true
 
@@ -144,4 +158,14 @@ var gojs = go.GraphObject.make;
   
     document.getElementById(elemento).focus();
   }
+
+  function validar() {
+    const palabra = document.getElementById("palabra").value;
+    const resultado = esPalindromoPar(palabra);
+    const divResultado = document.getElementById("resultado");
+    divResultado.innerHTML = resultado;
+  }
   
+  function rangeSlide(value){
+    document.getElementById('rangeValue').innerHTML = value
+  }
