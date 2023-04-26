@@ -18,7 +18,7 @@ var gojs = go.GraphObject.make;
 
   myDiagram.nodeTemplate =
   gojs(go.Node, "Auto",
-    gojs(go.Shape, "Circle", { fill: "#33FFDD" }),
+    gojs(go.Shape, "circle", { fill: "#33FFDD" }),
     gojs(go.TextBlock, { margin: 8 }, new go.Binding("text", "key")),
 
     gojs(go.Shape, "Circle", { width: 32, height: 32, fill: "transparent", strokeWidth: 1 },
@@ -30,7 +30,7 @@ var gojs = go.GraphObject.make;
   myDiagram.nodeTemplateMap.add("stack",
   gojs(go.Node, "Auto",
     { location: new go.Point(0, 0) },
-    gojs(go.Shape, "Rectangle", { fill: "lightgray", stroke: null }),
+    gojs(go.Shape, "Rectangle", { fill: "lightgray", stroke: null}),
     gojs(go.Panel, "Vertical",
       {
         defaultAlignment: go.Spot.Left,  // Alineación de los nodos hijos
@@ -134,4 +134,14 @@ var gojs = go.GraphObject.make;
   
   
   console.log(validarPalindromoPar("aabbaa")); // true
+
+  function sintetizarMensaje(texto, elemento) {
+    let sintetizador = window.speechSynthesis;
+  
+    mensaje = new SpeechSynthesisUtterance(texto);
+  
+    sintetizador.speak(mensaje);
+  
+    document.getElementById(elemento).focus();
+  }
   

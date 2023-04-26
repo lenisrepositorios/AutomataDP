@@ -44,14 +44,15 @@
         display: inline-block; 
         position: absolute;
         min-width: 15%;
+        
     }
     
     #myDiagramDiv{
-        width:80%; 
-        height:85%; 
+        width: 60%;; 
+        height: 65%;; 
         background-color: #f9fcfc; 
-        left: 208px; 
-        top: 200px; 
+        left: 350px; 
+        top: 250px; 
         display: inline-block;
         position: fixed;
     }
@@ -73,3 +74,55 @@
         position: relative;
       }
     }
+
+    /*#menuIdioma {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: 1;
+        list-style: none;
+        background-color: #3e4a4a;
+        border: 1px solid #5f5c5c;
+        padding: 0;
+        margin: 0;
+      }*/
+      
+      #menuIdioma li {
+        display: block;
+        padding: 2%px 5%;
+        border-bottom: 1px solid #969696;
+      }
+      
+      #menuIdioma li:last-child {
+        border-bottom: none;
+      }
+      
+      #menuIdioma li a {
+        display: block;
+        color: black;
+        text-decoration: none;
+      }
+      
+      #menuIdioma li a:hover {
+        background-color: #f2f2f2;
+      }
+      
+      #titulo{
+        padding-left: 40%;
+      }
+
+      #h2I{
+        padding-left: 20%;
+      }
+
+      .main-content{
+        display: inline-block;
+        position: absolute;
+        padding-top: 90px;
+        padding-left: 300px;
+        
+      }
+
+ 
+
