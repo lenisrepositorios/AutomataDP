@@ -3,9 +3,10 @@ var gojs = go.GraphObject.make;
 
   myDiagram.model = new go.GraphLinksModel(
     [
-      { key: "p" },
-      { key: "q" },
-      { key: "r" },
+      { key: "p" , loc: new go.Point(-150, 0)},
+      { key: "q" , loc: new go.Point(0, 0)},
+      { key: "r" , loc: new go.Point(150, 0)},
+      { key: "stack" , loc: new go.Point(150, 0) , stack: ["#"], top: 1},
     ],
     [
       { from: "p", to: "p" , text: "b, b/bb\na, b/ba\nb, a/ab\na, a/aa\nb, #/#b\na, #/#a" },
@@ -25,6 +26,26 @@ var gojs = go.GraphObject.make;
         return data.key === "r";
       }))
   );
+
+  myDiagram.nodeTemplateMap.add("stack",
+  gojs(go.Node, "Auto",
+    { location: new go.Point(0, 0) },
+    gojs(go.Shape, "Rectangle", { fill: "lightgray", stroke: null }),
+    gojs(go.Panel, "Vertical",
+      {
+        defaultAlignment: go.Spot.Left,  // Alineación de los nodos hijos
+        defaultStretch: go.GraphObject.Horizontal,  // El tamaño de los nodos hijos se estira horizontalmente
+        itemTemplate:
+          gojs(go.Panel, "Horizontal",
+            gojs(go.Shape, "Rectangle", { width: 12, height: 12, fill: "white" }), // Representación del símbolo en la pila
+            gojs(go.TextBlock, { margin: new go.Margin(4, 0, 0, 0), font: "bold 12px sans-serif" }, // Etiqueta con el símbolo
+              new go.Binding("text", "key"))
+          )
+      },
+      new go.Binding("itemArray", "stack") // Asociamos el array de elementos de la pila a la propiedad itemArray del panel
+    )
+  )
+);
 
   myDiagram.linkTemplate =
   gojs(go.Link,
