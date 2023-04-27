@@ -42,7 +42,7 @@ var idiomas = {
     var datosDeIdioma = idiomas[idioma].app;
   
     document.querySelector("#Menu").textContent = datosDeIdioma.Menu;
-    //document.querySelector("#h2I").textContent = datosDeIdioma.h2I;
+    document.querySelector("#h2I").textContent = datosDeIdioma.h2I;
     document.querySelector("#titulo").textContent = datosDeIdioma.titulo;
     document.querySelector("#barraDelLenguaje").textContent = datosDeIdioma.barraDelLenguaje;
     document.querySelector("#validador").textContent = datosDeIdioma.validador;
